@@ -1,7 +1,3 @@
-
----
-
-```markdown
 # 🤖 Nexa AI – Your Smart AI Assistant
 ![logo](assets/logo.png)
 
@@ -12,9 +8,9 @@
 ---
 
 # 🎯 Preview of Nexa AI
-| Chat UI | Chat Graph | Output Sample | View Dataset |
+| Chat Bot UI | Saved Chat | Login Page | Output of AI |
 |--------|------------|----------------|--------------|
-| ![Main UI](preview/main.png) | ![Graph](preview/graph.png) | ![Output](preview/output.png) | ![View](preview/view.png) |
+| ![Main UI](preview/main.png) | ![Saved Chat](preview/saved_chat.png) | ![Login](preview/login.png) | ![Coding](preview/coding.png) |
 
 ---
 
@@ -31,13 +27,13 @@
 <p>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" height="40" alt="Streamlit" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" height="40" alt="OpenAI" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/DeepSeek_logo.svg" height="40" alt="OpenAI" />
 </p>
 
 - **Python** – Core logic
 - **Streamlit** – UI framework
 - **LangChain** – Prompting and memory
-- **Groq / DeepSeek / OpenAI** – LLM APIs
+- **DeepSeek** – LLM APIs
 - **Dotenv** – Secure API key management
 
 ---

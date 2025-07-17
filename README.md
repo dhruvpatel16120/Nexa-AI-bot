@@ -1,5 +1,5 @@
 # 🤖 Nexa AI – Your Smart AI Assistant
-![logo](assets/logo.png)
+![logo](preview/logo.png)
 
 > 💬 A fully customizable conversational AI chatbot built using **Streamlit + LangChain + DeepSeek/Groq + OpenAI**  
 > 🧠 Supports multiple model providers with built-in memory, chat history, and desi-style humor packs!  

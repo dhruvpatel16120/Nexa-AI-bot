@@ -75,42 +75,52 @@ nexa-ai/
 # 🚀 Installation & Setup
 
 ## 🔵 Windows
-
-```bash
-git clone https://github.com/dhruvpatel16120/nexa-ai.git
-cd nexa-ai
+### 1. clone the Github Repo
+```
+git clone https://github.com/dhruvpatel16120/AI-bot.git
+cd AI-bot
+```
+### 2. Create Virtual Env for Setup
+```
 python -m venv venv
 venv\Scripts\activate
+```
+### 3. Install the Packages
+```
 pip install -r requirements.txt
 ```
 
 ## 🟢 Linux / macOS
 
-```bash
+### 1. clone the Github Repo
+```
 git clone https://github.com/dhruvpatel16120/nexa-ai.git
 cd nexa-ai
+```
+2. Create Virtual Env for Setup
+```
 python3 -m venv venv
 source venv/bin/activate
+```
+
+3. Install the Packages
+```
 pip install -r requirements.txt
 ```
 
----
-
 # 🔑 Set Up API Key
 
-Get your key from [https://console.groq.com/keys](https://console.groq.com/keys) or OpenAI.
+Get your key from [https://console.groq.com/keys](https://console.groq.com/keys).
 
-```bash
-# .env file content
-GROQ_API_KEY=your_key_here
 ```
-
----
+# PAST YOUR API KEY in .env file content 
+API_KEY=your_key_here
+```
 
 # ▶️ Run the App
 
 ```bash
-streamlit run bot.py
+streamlit run main.py
 ```
 
 > Make sure `.env` is configured correctly before running.
@@ -156,6 +166,3 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 ---
 
 > Built with ❤️ by [@dhruvpatel16120](https://github.com/dhruvpatel16120)
-```
-
----

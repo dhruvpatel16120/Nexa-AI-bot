@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+
+# Streamlit specific
+.streamlit/
+.streamlit/config.toml
+*.streamlit-credentials.toml
+
+# Logs and caches
+*.log
+*.sqlite3
+*.db
+*.pkl
+*.jsonl
+*.gz
+.cache/
+logs/
+
+# Jupyter and notebook files (if used)
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+
+# Python egg
+*.egg-info/
+*.egg
+
+# Exported files
+*.pdf
+*.csv
+*.xlsx
+*.zip
+
+# System files
+desktop.ini

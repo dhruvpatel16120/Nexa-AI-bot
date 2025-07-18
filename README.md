@@ -1,7 +1,7 @@
 # 🤖 Nexa AI – Your Smart AI Assistant
 ![logo](preview/logo.png)
 
-> 💬 A fully customizable conversational AI chatbot built using **Streamlit + LangChain + DeepSeek/Groq + OpenAI**  
+> 💬 A fully customizable conversational AI chatbot built using **Streamlit + LangChain + DeepSeek *
 > 🧠 Supports multiple model providers with built-in memory, chat history, and desi-style humor packs!  
 > 🌐 Built for developers, learners, and businesses — open source and ready to deploy.
 
@@ -51,23 +51,30 @@
 ✅ Light & Fast UI with Streamlit
 
 ---
+---
 
 # 📁 Project Structure
 
 ```plaintext
-nexa-ai/
-├ assets/                → Images, logos
-├ saved_chats/           → User-saved conversations
-├ chat_history/          → Temporary chat memory
-├ components/
-│   ├ sidebar.py         → Sidebar navigation logic
-│   └ auth.py            → Login / session logic
-├ custom_responses.py    → Custom reply packs (shayari, jokes, quotes)
-├ bot.py                 → Main chatbot app (Streamlit)
-├ .env                   → API keys (not committed)
-├ .gitignore
-├ requirements.txt
-└ README.md
+Ai-bot/
+├── assets/
+│   ├── lottie/welcome.json     # Animation
+│   ├── auth.py                 # Login/session logic
+│   ├── bot.py                  # Core chat interface
+│   ├── custom_responses.py     # Shayari/Jokes/Quotes
+│   └── sidebar.py              # Sidebar features
+|
+├── preview/                    # Preview images
+│   ├── main.png
+│   ├── login.png
+│   ├── saved_chat.png
+│   └── coding.png
+├── .env                        # 🔐 Place your API Keys
+├── .gitignore
+├── LICENSE                     # MIT Licenses
+├── main.py                     # Main entry to run app
+├── requirements.txt            # dependencies
+└── README.md
 ```
 
 ---

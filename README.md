@@ -52,6 +52,13 @@
 
 # 🛠 Tech Stack
 
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" height="40" alt="Streamlit" />
+  <img src="https://avatars.githubusercontent.com/u/127096451?s=200&v=4" height="40" alt="LangChain" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DeepSeek_logo.svg/512px-DeepSeek_logo.svg.png" height="40" alt="DeepSeek" />
+</p>
+
 - **Python 3.9+** – Backend logic  
 - **Streamlit** – Web UI framework  
 - **LangChain** – Language model orchestration  
@@ -234,7 +241,7 @@ We welcome all contributions, big or small.
 # 📬 Contact
 
 Made with ❤️ by [@dhruvpatel16120](https://github.com/dhruvpatel16120)
-Have suggestions or issues? Open an [issue](https://github.com/dhruvpatel16120/AI-bot/issues) or email: **[dhruvpatel16120@gmail.com](mailto:dhruvpatel16120@gmail.com)**
+Have suggestions or issues? Open an [issue](https://github.com/dhruvpatel16120/AI-bot/issues) or Linkedin Message : **[dhruvpatel16120](https://www.linkedin.com/in/dhruvpatel16120/)**
 
 ---
 

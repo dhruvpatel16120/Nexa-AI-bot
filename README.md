@@ -1,4 +1,5 @@
 # 🤖 Nexa AI – Your Smart AI Assistant  
+
 ![logo](preview/logo.png)
 
 > 💬 A customizable, open-source conversational chatbot powered by **Streamlit + LangChain + DeepSeek/Groq**  
@@ -55,7 +56,7 @@
 <p>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" height="40" alt="Streamlit" />
-  <img src="https://avatars.githubusercontent.com/u/127096451?s=200&v=4" height="40" alt="LangChain" />
+  <img src="assets/langchain.png" height="40" alt="LangChain" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DeepSeek_logo.svg/512px-DeepSeek_logo.svg.png" height="40" alt="DeepSeek" />
 </p>
 

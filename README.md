@@ -93,9 +93,7 @@
 
 
 # 📺 Demo Video
-<a href="https://youtu.be/your-demo-link" target="_blank" style="padding:10px 16px;background:#4CAF50;color:white;border-radius:4px;text-decoration:none;font-weight:bold;">
-▶️ Watch Demo
-</a>
+[![Watch Demo](https://img.shields.io/badge/🎥%20Watch-Demo-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/your-demo-link)
 
 ---
 

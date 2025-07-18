@@ -1,8 +1,9 @@
 # 🤖 Nexa AI – Your Smart AI Assistant  
 ![logo](preview/logo.png)
 
-> 💬 A customizable, open-source conversational chatbot powered by **Streamlit + LangChain + DeepSeek/Groq + OpenAI**  
+> 💬 A customizable, open-source conversational chatbot powered by **Streamlit + LangChain + DeepSeek/Groq**  
 > 🌟 Designed for developers, learners, and AI enthusiasts with built-in memory, chat history, desi-style humor packs, and more.
+> 🚀 Don’t forget to ⭐ the repo if you like this project! Help others discover Nexa AI.
 
 ---
 
@@ -40,7 +41,7 @@
 # ✨ Features
 
 ✅ Conversational memory and smart history  
-✅ Support for **DeepSeek**, **Groq**, and **OpenAI** APIs  
+✅ Support for **DeepSeek**, **Groq** APIs  
 ✅ Shayari, Gujarati Jokes, Motivational & Chanakya Quotes  
 ✅ Animated sidebar with Lottie integrations  
 ✅ Save, download, and manage chats  
@@ -54,7 +55,7 @@
 - **Python 3.9+** – Backend logic  
 - **Streamlit** – Web UI framework  
 - **LangChain** – Language model orchestration  
-- **DeepSeek/Groq/OpenAI** – LLMs for AI intelligence  
+- **DeepSeek/Groq** – LLMs for AI intelligence  
 - **Lottie Files** – Animations  
 - **dotenv** – API key management
 
@@ -74,9 +75,13 @@
 
 # 🎯 Preview
 
-| Welcome Animation | Sign-Up UI | Download Chat | Java Query Response |
-|------------------|------------|----------------|----------------------|
-| ![welcome](preview/welcome.png) | ![signup](preview/signup.png) | ![download](preview/download.png) | ![java](preview/java.png) |
+| Welcome Animation | Sign-Up UI |
+|-------------------|------------|
+| ![welcome](preview/welcome.png) | ![signup](preview/signup.png) | 
+
+|Download Chat | Java Query Response |
+|----------------|----------------------|
+|![download](preview/download.png) | ![java](preview/java.png) |
 
 
 # 📺 Demo Video
@@ -89,20 +94,24 @@
 # 📁 Project Structure
 
 ```bash
-AI-bot/
+Ai-bot/
 ├── assets/
-│   ├── lottie/welcome.json
-│   ├── auth.py
-│   ├── bot.py
-│   ├── custom_responses.py
-│   └── sidebar.py
-├── preview/
-│   ├── *.png              # UI Preview images
-├── .env                   # API Keys (not committed)
+│   ├── lottie/welcome.json     # Animation
+│   ├── auth.py                 # Login/session logic
+│   ├── bot.py                  # Core chat interface
+│   ├── custom_responses.py     # Shayari/Jokes/Quotes
+│   └── sidebar.py              # Sidebar features
+|
+├── preview/                    # Preview images
+│   ├── main.png
+│   ├── login.png
+│   ├── saved_chat.png
+│   └── coding.png
+├── .env                        # 🔐 Place your API Keys
 ├── .gitignore
-├── LICENSE
-├── main.py
-├── requirements.txt
+├── LICENSE                     # MIT Licenses
+├── main.py                     # Main entry to run app
+├── requirements.txt            # dependencies
 └── README.md
 ````
 
@@ -229,11 +238,3 @@ Have suggestions or issues? Open an [issue](https://github.com/dhruvpatel16120/A
 
 ---
 
-> 🚀 Don’t forget to ⭐ the repo if you like this project! Help others discover Nexa AI.
-
-```
-
----
-
-Let me know if you'd like this in a downloadable `.md` file or want it pushed to GitHub via an automation script.
-```

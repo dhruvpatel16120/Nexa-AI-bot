@@ -1,175 +1,239 @@
-# 🤖 Nexa AI – Your Smart AI Assistant
+# 🤖 Nexa AI – Your Smart AI Assistant  
 ![logo](preview/logo.png)
 
-> 💬 A fully customizable conversational AI chatbot built using **Streamlit + LangChain + DeepSeek *
-> 🧠 Supports multiple model providers with built-in memory, chat history, and desi-style humor packs!  
-> 🌐 Built for developers, learners, and businesses — open source and ready to deploy.
+> 💬 A customizable, open-source conversational chatbot powered by **Streamlit + LangChain + DeepSeek/Groq + OpenAI**  
+> 🌟 Designed for developers, learners, and AI enthusiasts with built-in memory, chat history, desi-style humor packs, and more.
 
 ---
 
-# 🎯 Preview of Nexa AI
-| Chat Bot UI | Saved Chat | Login Page | Output of AI |
-|--------|------------|----------------|--------------|
-| ![Main UI](preview/main.png) | ![Saved Chat](preview/saved_chat.png) | ![Login](preview/login.png) | ![Coding](preview/coding.png) |
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b?logo=streamlit&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/Powered%20by-DeepSeek.ai-purple)
 
 ---
+
+# 📚 Table of Contents
+
+- [🧠 Overview](#overview)  
+- [✨ Features](#features)  
+- [🛠 Tech Stack](#tech-stack)  
+- [📸 Screenshots](#screenshots)  
+- [🎯 Preview](#preview)  
+- [📁 Project Structure](#project-structure)  
+- [💻 Installation](#installation)  
+  - [🔐 API Setup](#api-setup)  
+  - [▶️ Run the App](#run-the-app)  
+- [🧪 Usage](#usage)  
+- [📄 License](#license)  
+- [🙌 Contributing](#contributing)  
+- [📬 Contact](#contact)
+
+---
+
+# 🧠 Overview
+
+**Nexa AI** is a smart and interactive chatbot built with the latest LLMs and an intuitive UI using Streamlit. Whether you're a developer experimenting with LangChain or a student exploring AI, Nexa gives you flexibility, fun, and functionality.
+
+---
+
+# ✨ Features
+
+✅ Conversational memory and smart history  
+✅ Support for **DeepSeek**, **Groq**, and **OpenAI** APIs  
+✅ Shayari, Gujarati Jokes, Motivational & Chanakya Quotes  
+✅ Animated sidebar with Lottie integrations  
+✅ Save, download, and manage chats  
+✅ `.env` support for secure API key usage  
+✅ Clean, fast UI with emoji flavor
+
+---
+
+# 🛠 Tech Stack
+
+- **Python 3.9+** – Backend logic  
+- **Streamlit** – Web UI framework  
+- **LangChain** – Language model orchestration  
+- **DeepSeek/Groq/OpenAI** – LLMs for AI intelligence  
+- **Lottie Files** – Animations  
+- **dotenv** – API key management
+
+---
+
+# 📸 Screenshots
+
+| Home UI               | Saved Chat Panel       |
+|-----------------------|------------------------|
+| ![main](preview/main.png) | ![saved](preview/saved_chat.png) |
+
+| Login Page            | Chat Output Example    |
+|------------------------|------------------------|
+| ![login](preview/login.png) | ![coding](preview/coding.png) |
+
+---
+
+# 🎯 Preview
+
+| Welcome Animation | Sign-Up UI | Download Chat | Java Query Response |
+|------------------|------------|----------------|----------------------|
+| ![welcome](preview/welcome.png) | ![signup](preview/signup.png) | ![download](preview/download.png) | ![java](preview/java.png) |
+
 
 # 📺 Demo Video
-
 <a href="https://youtu.be/your-demo-link" target="_blank" style="padding:10px 16px;background:#4CAF50;color:white;border-radius:4px;text-decoration:none;font-weight:bold;">
 ▶️ Watch Demo
 </a>
 
 ---
 
-# ⚙ Tech Stack
-
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" height="40" alt="Streamlit" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/DeepSeek_logo.svg" height="40" alt="OpenAI" />
-</p>
-
-- **Python** – Core logic
-- **Streamlit** – UI framework
-- **LangChain** – Prompting and memory
-- **DeepSeek** – LLM APIs
-- **Dotenv** – Secure API key management
-
----
-
-# ✨ Features
-
-✅ Smart chat with history & saved conversations  
-✅ Supports Groq, DeepSeek, and OpenAI models  
-✅ Custom modes: Gujarati Jokes, Shayari, Motivational Quotes, Chanakya Quotes  
-✅ Clean, animated sidebar with actions  
-✅ Built-in emoji & desi flavor  
-✅ Custom prompt handling  
-✅ Lottie animations for visual appeal  
-✅ `.env` based secure API integration  
-✅ Light & Fast UI with Streamlit
-
----
----
-
 # 📁 Project Structure
 
-```plaintext
-Ai-bot/
+```bash
+AI-bot/
 ├── assets/
-│   ├── lottie/welcome.json     # Animation
-│   ├── auth.py                 # Login/session logic
-│   ├── bot.py                  # Core chat interface
-│   ├── custom_responses.py     # Shayari/Jokes/Quotes
-│   └── sidebar.py              # Sidebar features
-|
-├── preview/                    # Preview images
-│   ├── main.png
-│   ├── login.png
-│   ├── saved_chat.png
-│   └── coding.png
-├── .env                        # 🔐 Place your API Keys
+│   ├── lottie/welcome.json
+│   ├── auth.py
+│   ├── bot.py
+│   ├── custom_responses.py
+│   └── sidebar.py
+├── preview/
+│   ├── *.png              # UI Preview images
+├── .env                   # API Keys (not committed)
 ├── .gitignore
-├── LICENSE                     # MIT Licenses
-├── main.py                     # Main entry to run app
-├── requirements.txt            # dependencies
+├── LICENSE
+├── main.py
+├── requirements.txt
 └── README.md
-```
+````
 
 ---
 
-# 🚀 Installation & Setup
+# 💻 Installation
 
 ## 🔵 Windows
-### 1. clone the Github Repo
+
+### ✅ Step 1: Clone the repository
 ```
 git clone https://github.com/dhruvpatel16120/AI-bot.git
 cd AI-bot
 ```
-### 2. Create Virtual Env for Setup
+### ✅ Step 2: Create & activate virtual environment
 ```
 python -m venv venv
 venv\Scripts\activate
 ```
-### 3. Install the Packages
+### ✅ Step 3: Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
 ## 🟢 Linux / macOS
 
-### 1. clone the Github Repo
+### ✅ Step 1: Clone the repository
 ```
-git clone https://github.com/dhruvpatel16120/nexa-ai.git
-cd nexa-ai
+git clone https://github.com/dhruvpatel16120/AI-bot.git
+cd AI-bot
 ```
-2. Create Virtual Env for Setup
+### ✅ Step 2: Create & activate virtual environment
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
-
-3. Install the Packages
+## ✅ Step 3: Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-# 🔑 Set Up API Key
+---
 
-Get your key from [https://console.groq.com/keys](https://console.groq.com/keys).
+## 🔐 API Setup
 
+>Get your API Key from [https://console.groq.com/keys](https://console.groq.com/keys) or other LLM providers.
++ ⚠️ Create a `.env` file in the root directory:
+
+```env
+API_KEY=your_api_key_here
 ```
-# PAST YOUR API KEY in .env file content 
-API_KEY=your_key_here
-```
 
-# ▶️ Run the App
+---
 
+### ▶️ Run the App
 ```bash
 streamlit run main.py
 ```
 
-> Make sure `.env` is configured correctly before running.
+Then open your browser:
+[http://localhost:8501](http://localhost:8501)
 
 ---
 
-# 🧪 Usage Tips
+# 🧪 Usage
 
-- Use the sidebar to view history and saved chats  
-- Add or delete specific conversations  
-- Activate Shayari, Jokes, and Quotes from custom_responses.py  
-- Use “Download” button to save your chats  
-- Clear all chats or refresh with a click!
-
----
-
-# 🙌 Contributing
-
-We welcome contributions and ideas!
-
-### How to Contribute
-
-1. Fork the repo 🍴  
-2. Create your feature branch (`git checkout -b feature/YourFeature`)  
-3. Commit your changes (`git commit -m 'Add awesome feature'`)  
-4. Push to the branch (`git push origin feature/YourFeature`)  
-5. Create a Pull Request 🚀
+* Use sidebar to navigate history and saved chats
+* Add/delete chat history
+* Switch to Shayari or Joke mode from `custom_responses.py`
+* Save and download your chats
+* Use “Clear” to reset memory
 
 ---
 
 # 📄 License
 
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for full details.
 
 ---
 
-# 🏷 Tags / Topics
+# 🙌 Contributing
 
-```
-#chatbot #nexa #ai-assistant #langchain #streamlit #groq #openai #deepseek #chat-ui #python #desi-bot #open-source
+We welcome all contributions, big or small.
+
+![GitHub contributors](https://img.shields.io/github/contributors/dhruvpatel16120/AI-bot?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/dhruvpatel16120/AI-bot?style=flat-square)
+
+### 👇 How to Start
+
+1. Fork this repository 🍴
+2. Create a new branch
+
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. Make your changes 🚀
+4. Commit your work
+
+   ```bash
+   git commit -m "Added an amazing feature"
+   ```
+5. Push and open a PR
+
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+### ✅ Contribution Tips
+
+* Write clean, readable code
+* Add helpful commit messages
+* Include screenshots/GIFs if adding UI features
+* Keep the README up to date with your change
+
+💖 Thanks to all amazing contributors!
+
+---
+
+# 📬 Contact
+
+Made with ❤️ by [@dhruvpatel16120](https://github.com/dhruvpatel16120)
+Have suggestions or issues? Open an [issue](https://github.com/dhruvpatel16120/AI-bot/issues) or email: **[dhruvpatel16120@gmail.com](mailto:dhruvpatel16120@gmail.com)**
+
+---
+
+> 🚀 Don’t forget to ⭐ the repo if you like this project! Help others discover Nexa AI.
+
 ```
 
 ---
 
-> Built with ❤️ by [@dhruvpatel16120](https://github.com/dhruvpatel16120)
+Let me know if you'd like this in a downloadable `.md` file or want it pushed to GitHub via an automation script.
+```

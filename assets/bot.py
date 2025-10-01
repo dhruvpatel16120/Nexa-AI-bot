@@ -14,6 +14,9 @@ HISTORY_FILE = "archived/chats_history/history.json"
 LOTTIE_PATH = "assets/lottie/welcome.json"
 SAVED_CHAT_DIR = "archived/saved_chats"
 
+ # Get the absolute path of the current file (main.py or this module)
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Ensure required directories exist
 os.makedirs(os.path.dirname(HISTORY_FILE), exist_ok=True)
 os.makedirs(SAVED_CHAT_DIR, exist_ok=True)
@@ -567,14 +570,25 @@ def render_sidebar_buttons():
     if st.sidebar.button("🔄 Refresh", use_container_width=True):
         refresh_app()
 
-def load_lottie_animation(path: str):
+def load_lottie_animation(filename: str):
     try:
-        with open(path, "r") as file:
-            return json.load(file)
-    except Exception as e:
-        st.warning(f"Error loading Lottie: {e}")
-        return None
+        # Get the absolute path of the current file (main.py or this module)
+        base_dir = os.path.dirname(os.path.abspath(__file__))
 
+        # Build absolute path to assets/lottie
+        asset_path = os.path.join(base_dir, "assets", "lottie", filename)
+
+        if not os.path.exists(asset_path):
+            st.warning(f"⚠️ Lottie file not found: {asset_path}")
+            return None
+
+        with open(asset_path, "r", encoding="utf-8") as file:
+            return json.load(file)
+
+    except Exception as e:
+        st.warning(f"Error loading Lottie animation: {e}")
+        return None
+        
 def render_main_chat_ui(chat_model=None):
     """Main UI layout with Nexa branding, chat logic, and modern styling."""
     try:

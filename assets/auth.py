@@ -7,21 +7,37 @@ import assets.sidebar
 USER_DATA_FILE = "user/users.csv"
 
 def load_user_data():
-    # Ensure directory exists
     os.makedirs("user", exist_ok=True)
 
-    # If file does not exist, create an empty DataFrame with columns
+    expected_columns = ["username", "email", "password"]
+
+    # If the file does not exist → create a fresh CSV with headers
     if not os.path.isfile(USER_DATA_FILE):
-        df = pd.DataFrame(columns=["name", "email", "password"])  # match your columns
+        df = pd.DataFrame(columns=expected_columns)
         df.to_csv(USER_DATA_FILE, index=False)
         return df
 
-    # If file exists, read normally
     try:
-        return pd.read_csv(USER_DATA_FILE)
+        df = pd.read_csv(USER_DATA_FILE)
+
+        # If CSV exists but is empty → reset to expected schema
+        if df.empty or df.shape[1] == 0:
+            df = pd.DataFrame(columns=expected_columns)
+            df.to_csv(USER_DATA_FILE, index=False)
+            return df
+
+        # Ensure all expected columns are present
+        for col in expected_columns:
+            if col not in df.columns:
+                df[col] = ""
+
+        return df
+
     except pd.errors.EmptyDataError:
-        # Handle empty file
-        return pd.DataFrame(columns=["name", "email", "password"])
+        # If CSV exists but is totally empty (no headers)
+        df = pd.DataFrame(columns=expected_columns)
+        df.to_csv(USER_DATA_FILE, index=False)
+        return df
 
 # Load Lottie animation from file
 def load_lottiefile(filepath):

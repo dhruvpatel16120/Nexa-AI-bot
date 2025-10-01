@@ -572,11 +572,10 @@ def render_sidebar_buttons():
 
 def load_lottie_animation(filename: str):
     try:
-        # Get the absolute path of the current file (main.py or this module)
+        # go up one level if current file is inside assets/
         base_dir = os.path.dirname(os.path.abspath(__file__))
-
-        # Build absolute path to assets/lottie
-        asset_path = os.path.join(base_dir, "assets", "lottie", filename)
+        project_root = os.path.dirname(base_dir) if base_dir.endswith("assets") else base_dir
+        asset_path = os.path.join(project_root, "assets", "lottie", filename)
 
         if not os.path.exists(asset_path):
             st.warning(f"⚠️ Lottie file not found: {asset_path}")
@@ -588,6 +587,7 @@ def load_lottie_animation(filename: str):
     except Exception as e:
         st.warning(f"Error loading Lottie animation: {e}")
         return None
+
         
 def render_main_chat_ui(chat_model=None):
     """Main UI layout with Nexa branding, chat logic, and modern styling."""

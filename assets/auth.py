@@ -1,19 +1,23 @@
-import streamlit as st
+import streamlit as st 
 import json
 import os
 import pandas as pd
 import assets.sidebar
 
-
+# ---------------------- CONFIG ----------------------
 USER_DATA_FILE = 'user/users.csv'
 
+# Ensure the folder exists
+os.makedirs(os.path.dirname(USER_DATA_FILE), exist_ok=True)
+
+# ---------------------- USER DATA ----------------------
 def load_user_data():
     if os.path.exists(USER_DATA_FILE):
         return pd.read_csv(USER_DATA_FILE)
     else:
         return pd.DataFrame(columns=["email", "password", "username"])
 
-# Load Lottie animation from file
+# ---------------------- LOTTIE ----------------------
 def load_lottiefile(filepath):
     with open(filepath, "r") as f:
         return json.load(f)
@@ -38,17 +42,9 @@ def render_background_style():
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
-         
-            
-        /* Title styling */
-        h2 {
-            font-weight: 700;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
 
-        /* Stylish button */
+        h2 { font-weight: 700; font-size: 2rem; margin-bottom: 1rem; color: #ffffff; }
+
         .stButton>button {
             background: linear-gradient(90deg, #4A90E2, #9013FE);
             color: #fff;
@@ -65,7 +61,6 @@ def render_background_style():
             box-shadow: 0 0 10px rgba(74,144,226,0.6);
         }
 
-        /* Input field styling */
         .stTextInput>div>div>input {
             background: rgba(255,255,255,0.8);
             border: 2px solid #4A90E2;
@@ -84,30 +79,20 @@ def render_background_style():
             color: #fff;
         }
 
-        a {
-            color: #4A90E2;
-            text-decoration: underline;
-        }
+        a { color: #4A90E2; text-decoration: underline; }
         </style>
     """, unsafe_allow_html=True)
 
-
-# ---------------------- SIGN UP PAGE ----------------------
+# ---------------------- SIGN UP ----------------------
 def render_signup(user_data):
     user_data = load_user_data()
     render_background_style()
     st.markdown("<h1 style='text-align:center;color:white;font-size:2.5rem;'>🤖 Welcome to Nexa AI</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align:center;color:white;'>🔐 Create Your Nexa Account</h2>", unsafe_allow_html=True)
+    st.markdown("<div class='description' style='text-align:center;font-size:1.2rem;'>⚠️ Please fill in the details below to create your account.</div>", unsafe_allow_html=True)
 
-    st.markdown("<div class='description' style='text-align:center;font-size:1.2rem;'>⚠️Please fill in the details below to create your account.</div>", unsafe_allow_html=True)
-    
-    st.markdown("<h4>👤 Username</h4>", unsafe_allow_html=True)
     username = st.text_input("Username", key="signup_username", label_visibility="collapsed")
-
-    st.markdown("<h4>📧 Email</h4>", unsafe_allow_html=True)
     email = st.text_input("Email", key="signup_email", label_visibility="collapsed")
-
-    st.markdown("<h4>🔒 Password</h4>", unsafe_allow_html=True)
     password = st.text_input("Password", type="password", key="signup_password", label_visibility="collapsed")
 
     if st.button("Sign Up"):
@@ -116,49 +101,51 @@ def render_signup(user_data):
         elif username in user_data["username"].values:
             st.error("🚫 Username already taken. Please choose another.")
         else:
+            # Append new user
             new_user = pd.DataFrame({
                 "username": [username],
                 "email": [email],
-                "password": [password]  # Add hashing for production!
+                "password": [password]  # Use hashing for production!
             })
             user_data = pd.concat([user_data, new_user], ignore_index=True)
+
+            # Ensure folder exists and save
+            os.makedirs(os.path.dirname(USER_DATA_FILE), exist_ok=True)
             user_data.to_csv(USER_DATA_FILE, index=False)
+
             st.success("✅ Account created! You can now log in.")
             st.session_state.page_option = "Login"
+            st.experimental_rerun()
 
     st.markdown("<div class='footer'>© 2025 Nexa AI</div>", unsafe_allow_html=True)
+
+# ---------------------- LOGIN ----------------------
 def render_login(user_data):
     user_data = load_user_data()
     render_background_style()
     st.markdown("<h1 style='text-align:center;color:white;font-size:2.5rem;'>🤖 Welcome to Nexa AI</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align:center; color:white;'>🔑 Login to Nexa</h2>", unsafe_allow_html=True)
-
     st.markdown("<div class='description' style='font-size:1.2rem;text-align:center;'>⚠️ Please enter your username/email and password to continue.</div>", unsafe_allow_html=True)
 
-    st.markdown("<h4 style='margin-bottom: 0;'>📧 Username or Email</h4>", unsafe_allow_html=True)
     login_input = st.text_input("Username or Email", key="login_user_input", label_visibility="collapsed")
-
-    st.markdown("<h4 style='margin-bottom: 0;'>🔑 Password</h4>", unsafe_allow_html=True)
     password = st.text_input("Password", type="password", key="login_password", label_visibility="collapsed")
 
     if st.button("Log In"):
-        if login_input.strip() == "" or password.strip() == "":
+        if not login_input.strip() or not password.strip():
             st.error("All fields are required!")
         else:
-            # Match by either username or email
             user_row = user_data[(user_data['email'] == login_input) | (user_data['username'] == login_input)]
-
             if user_row.empty:
                 st.error("Username or Email not found. Please sign up first.")
             elif user_row['password'].values[0] != password:
                 st.error("Incorrect password.")
             else:
-                st.session_state.logged_in_user = user_row['email'].values[0] 
+                st.session_state.logged_in_user = user_row['email'].values[0]
                 st.session_state.logged_in_user_email = user_row['email'].values[0]
                 st.session_state.logged_in_username = user_row['username'].values[0]
                 st.success(f"✅ Welcome To Nexa AI!")
                 st.session_state.page_option = "Chat with Bot"
-                st.rerun()
+                st.experimental_rerun()
 
     if st.session_state.get("logged_in_user") not in [None, "", "null"]:
         st.success(f"Welcome back, {st.session_state.logged_in_user}!")

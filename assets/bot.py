@@ -11,7 +11,7 @@ import re
 
 # Constants
 HISTORY_FILE = "archived/chats_history/history.json"
-LOTTIE_PATH = "assets/lottie/welcome.json"
+LOTTIE_PATH = "welcome.json"
 SAVED_CHAT_DIR = "archived/saved_chats"
 
  # Get the absolute path of the current file (main.py or this module)

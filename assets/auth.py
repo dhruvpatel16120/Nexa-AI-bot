@@ -4,14 +4,24 @@ import os
 import pandas as pd
 import assets.sidebar
 
-
-USER_DATA_FILE = 'user/users.csv'
+USER_DATA_FILE = "user/users.csv"
 
 def load_user_data():
-    if os.path.exists(USER_DATA_FILE):
+    # Ensure directory exists
+    os.makedirs("user", exist_ok=True)
+
+    # If file does not exist, create an empty DataFrame with columns
+    if not os.path.isfile(USER_DATA_FILE):
+        df = pd.DataFrame(columns=["name", "email", "password"])  # match your columns
+        df.to_csv(USER_DATA_FILE, index=False)
+        return df
+
+    # If file exists, read normally
+    try:
         return pd.read_csv(USER_DATA_FILE)
-    else:
-        return pd.DataFrame(columns=["email", "password", "username"])
+    except pd.errors.EmptyDataError:
+        # Handle empty file
+        return pd.DataFrame(columns=["name", "email", "password"])
 
 # Load Lottie animation from file
 def load_lottiefile(filepath):
